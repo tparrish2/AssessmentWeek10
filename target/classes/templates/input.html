@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Course</title>
+</head>
+  <body>
+  	<h2>Enter a Golf Course</h2>
+    <form th:object="${newCourse}" th:action="@{/update/{id}(id=${newCourse.id})}" method='POST'>
+      <label>Course Name:</label><br>
+      <input name="courseName" size="20" th:field="*{courseName}"><br>
+      <label>City:</label><br>
+      <input name="city" size="12" th:field="*{city}"><br>
+      <label>Public or Private:</label><br>
+      <input name="publicPrivate" size="12" th:field="*{publicPrivate}"><br>
+      <label># of Holes:</label><br>
+      <input name="holeAmount" size="1" th:field="*{holeAmount}"><br><br>
+      <input name="submit" type="submit" value="submit" />
+    </form>
+    <br>
+    <a href="viewAll">View all Courses</a>
+  </body>
+</html>
